@@ -8,7 +8,7 @@ export function PlayerList({ players, roundIndex, promisePhase }) {
           <Player
             key={index}
             name={player.name}
-            score={player.score}
+            score={player.getScore(roundIndex)}
             promisePhase={promisePhase}
             player={player}
             roundIndex={roundIndex}

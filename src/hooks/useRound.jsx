@@ -14,12 +14,13 @@ export function useRound({ players }) {
       setRounds((prevRounds) => [...prevRounds, currentRound + 1]);
     }
     players.forEach((player) => {
-      player.calculateScore();
+      player.calculateScore(currentRound - 1);
       player.reset();
     });
     setPromisePhase(true);
     setCurrentRound(currentRound + 1);
   };
+
   const previousRound = () => {
     if (!promisePhase) {
       setPromisePhase(true);
@@ -30,6 +31,7 @@ export function useRound({ players }) {
       setPromisePhase(false);
     }
   };
+
   return {
     currentRound,
     nextRound,

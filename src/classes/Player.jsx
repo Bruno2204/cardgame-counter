@@ -1,7 +1,7 @@
 export class Player {
   constructor(name) {
     this.name = name;
-    this.score = 0;
+    this.score = [0];
     this.promise = 0;
     this.tricks = 0;
   }
@@ -17,7 +17,21 @@ export class Player {
   decreaseTricks() {
     this.tricks = this.tricks > 0 ? this.tricks - 1 : 0;
   }
-  calculateScore() {
+  getScore(round = 0) {
+    return this.score[round];
+  }
+  getPromise(round = 0) {
+    return this.promise;
+  }
+  getTricks(round = 0) {
+    return this.tricks;
+  }
+
+  calculateScore(round = 0) {
+    if (!this.score[round + 1]) {
+      this.score.push(this.score[round]);
+    }
+
     let score = this.tricks;
 
     if (this.promise === this.tricks) {
@@ -26,7 +40,7 @@ export class Player {
         score += (this.tricks / 2) * 10 - 10;
       }
     }
-    this.score = score + this.score;
+    this.score[round + 1] += score;
   }
   reset() {
     this.promise = 0;
