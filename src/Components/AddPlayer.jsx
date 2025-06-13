@@ -3,8 +3,8 @@ export function AddPlayer({ addPlayer, resetPlayers }) {
     <form className="form" onSubmit={addPlayer}>
       <input name="playerName" placeholder="Jugador" />
       <button type="submit">+</button>
-      <button type="button" onClick={resetPlayers}>
-        ⭕
+      <button type="button" className="restart-game" onClick={resetPlayers}>
+        ♻️
       </button>
     </form>
   );

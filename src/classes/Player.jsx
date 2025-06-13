@@ -29,7 +29,7 @@ export class Player {
 
   calculateScore(round = 0) {
     if (!this.score[round + 1]) {
-      this.score.push(this.score[round]);
+      this.score.push(0);
     }
 
     let score = this.tricks;
@@ -40,7 +40,7 @@ export class Player {
         score += (this.tricks / 2) * 10 - 10;
       }
     }
-    this.score[round + 1] += score;
+    this.score[round + 1] = this.score[round] + score;
   }
   reset() {
     this.promise = 0;
