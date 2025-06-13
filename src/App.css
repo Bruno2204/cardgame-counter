@@ -16,7 +16,10 @@ table {
   width: 100%;
 }
 .restart-game {
-  background-color: darkred;
+  background-color: rgb(214, 1, 1);
+  box-shadow:  0 0 0 2px black;
+
+  
 }
 
 tr.player {

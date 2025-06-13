@@ -12,6 +12,7 @@ export function PlayerList({ players, roundIndex, promisePhase }) {
             promisePhase={promisePhase}
             player={player}
             roundIndex={roundIndex}
+            isTurnPlayer={roundIndex % players.length === index}
           />
         ))}
       </tbody>

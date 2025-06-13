@@ -14,7 +14,7 @@ export function WinsCell({ promisePhase, player }) {
               name="winNumber"
               className="win-input"
               type="number"
-              value={player.tricks} />
+              value={player.getTricks()} />
             <button onClick={increaseWin}>+</button>
           </>
         </td>
